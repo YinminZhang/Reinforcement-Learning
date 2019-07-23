@@ -13,4 +13,16 @@ class SarsaLambdaTable():
     def choose_action(self, obersvation):
         self._check_state_exist(obersvation):
         if np.random.uniform()<self.epsilon:
-            actions = self.q_table.loc
+            actions = self.q_table.loc[obersvation,:]
+            action  = np.random.choice(actions[actions==np.max(actions)].index)
+        else:
+            action = np.random.choice(self.q_table.loc[obersvation,:].index)
+        return action
+
+    def _check_state_exist(self, state):
+        if state not in self.q_table.index:
+            self.q_table = self.q_table.append(
+                pd.Series(
+                    [0]*len(actions)
+                )
+            )
