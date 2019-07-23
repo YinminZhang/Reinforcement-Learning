@@ -9,9 +9,10 @@ class SarsaLambdaTable():
         self.lambda_ = trace_lambda
         self.epsilon = e_greedy
         self.q_table = pd.DataFrame(columns=action_space, dtype=np.float64)
-    
+        self.eligibility_trace = self.q_table.copy()
+
     def choose_action(self, obersvation):
-        self._check_state_exist(obersvation):
+        self._check_state_exist(obersvation)
         if np.random.uniform()<self.epsilon:
             actions = self.q_table.loc[obersvation,:]
             action  = np.random.choice(actions[actions==np.max(actions)].index)
@@ -21,8 +22,27 @@ class SarsaLambdaTable():
 
     def _check_state_exist(self, state):
         if state not in self.q_table.index:
-            self.q_table = self.q_table.append(
-                pd.Series(
-                    [0]*len(actions)
+            to_be_append =pd.Series(
+                    [0]*len(self.actions),
+                    index=self.q_table.columns,
+                    name=state
                 )
-            )
+            self.q_table = self.q_table.append(to_be_append)
+            self.eligibility_trace = self.eligibility_trace.append(to_be_append)
+
+    def learn(self, s, a, r, s_, a_, method=2):
+        self._check_state_exist(s_)
+        q_predict = self.q_table.loc[s, a]
+        if s_ != 'terminal':
+            q_target = r + self.gamma * self.q_table.loc[s_, a_]
+        else:
+            q_target = r
+        error = q_target - q_predict
+
+        if method == 1:
+            self.eligibility_trace.loc[s, a] += 1
+        elif method == 2:
+            self.eligibility_trace.loc[s, :] = 0
+            self.eligibility_trace.loc[s, a] = 1
+        self.q_table += self.alpha * error * self.eligibility_trace
+        self.eligibility_trace *= self.gamma * self.lambda_
