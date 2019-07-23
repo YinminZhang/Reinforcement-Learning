@@ -11,13 +11,13 @@ class SarsaLambdaTable():
         self.q_table = pd.DataFrame(columns=action_space, dtype=np.float64)
         self.eligibility_trace = self.q_table.copy()
 
-    def choose_action(self, obersvation):
-        self._check_state_exist(obersvation)
+    def choose_action(self, observation):
+        self._check_state_exist(observation)
         if np.random.uniform()<self.epsilon:
-            actions = self.q_table.loc[obersvation,:]
+            actions = self.q_table.loc[observation,:]
             action  = np.random.choice(actions[actions==np.max(actions)].index)
         else:
-            action = np.random.choice(self.q_table.loc[obersvation,:].index)
+            action = np.random.choice(self.q_table.loc[observation,:].index)
         return action
 
     def _check_state_exist(self, state):
@@ -42,7 +42,7 @@ class SarsaLambdaTable():
         if method == 1:
             self.eligibility_trace.loc[s, a] += 1
         elif method == 2:
-            self.eligibility_trace.loc[s, :] = 0
+            self.eligibility_trace.loc[s, :] *= 0
             self.eligibility_trace.loc[s, a] = 1
         self.q_table += self.alpha * error * self.eligibility_trace
         self.eligibility_trace *= self.gamma * self.lambda_
