@@ -1,5 +1,5 @@
 from maze_env import Maze
-from RL import DoubleDeepQNetwork
+from RL import DuelingDeepQNetwork
 
 def run_maze():
     step = 0
@@ -37,7 +37,7 @@ def run_maze():
 
 if __name__ == "__main__":
     env = Maze()
-    RL = DoubleDeepQNetwork(env.n_actions, env.n_features,
+    RL = DuelingDeepQNetwork(env.n_actions, env.n_features,
                     learning_rate=0.01,
                     reward_decay=0.9,
                     e_greedy=0.9,

@@ -5,7 +5,7 @@ import tensorflow as tf
 np.random.seed(1)
 tf.set_random_seed(1)
 
-class DoubleDeepQNetwork:
+class DuelingDeepQNetwork:
     def __init__(
         self,
         n_actions,
@@ -61,10 +61,16 @@ class DoubleDeepQNetwork:
                 w1 = tf.get_variable('w1', [self.n_features, n_l1], initializer=w_initializer, collections=c_names)
                 b1 = tf.get_variable('b1', [1, n_l1], initializer=b_initializer, collections=c_names)
                 l1 = tf.nn.relu(tf.matmul(self.s, w1) + b1)
-            with tf.variable_scope('l2'):
+            with tf.variable_scope('value'):
+                w2 = tf.get_variable('w2', [n_l1, 1], initializer=w_initializer, collections=c_names)
+                b2 = tf.get_variable('b2', [1, 1], initializer=w_initializer, collections=c_names)
+                V = tf.matmul(l1, w2) + b2
+            with tf.variable_scope('advantage'):
                 w2 = tf.get_variable('w2', [n_l1, self.n_actions], initializer=w_initializer, collections=c_names)
                 b2 = tf.get_variable('b1', [1, self.n_actions], initializer=b_initializer, collections=c_names)
-                self.q_eval = tf.matmul(l1, w2) + b2
+                A = tf.matmul(l1, w2) + b2
+            with tf.variable_scope('Q'):
+                self.q_eval = V + (A - tf.reduce_mean(A, axis=1, keep_dims=True))
 
         with tf.variable_scope('loss'):
           self.loss = tf.reduce_mean(tf.squared_difference(self.q_target, self.q_eval))  
@@ -80,10 +86,16 @@ class DoubleDeepQNetwork:
                 w1 = tf.get_variable('w1', [self.n_features, n_l1], initializer=w_initializer, collections=c_names)
                 b1 = tf.get_variable('b1', [1, n_l1], initializer=b_initializer, collections=c_names)
                 l1 = tf.nn.relu(tf.matmul(self.s, w1) + b1)
-            with tf.variable_scope('l2'):
+            with tf.variable_scope('value'):
+                w2 = tf.get_variable('w2', [n_l1, 1], initializer=w_initializer, collections=c_names)
+                b1 = tf.get_variable('b1', [1, 1], initializer=b_initializer, collections=c_names)
+                V = tf.matmul(l1, w2) + b2
+            with tf.variable_scope('advantage'):
                 w2 = tf.get_variable('w2', [n_l1, self.n_actions], initializer=w_initializer, collections=c_names)
-                b1 = tf.get_variable('b1', [1, self.n_actions], initializer=b_initializer, collections=c_names)
-                self.q_next = tf.matmul(l1, w2) + b2
+                b2 = tf.get_variable('b2', [1, self.n_actions], initializer=b_initializer, collections=c_names)
+                A = tf.matmul(l1, w2) + b2
+            with tf.variable_scope('Q'):
+                self.q_next = V + (A - tf.reduce_mean(A, axis=1, keep_dims=True))
 
     def store_transition(self, s, a, r, s_):
         if not hasattr(self, 'memory_counter'):
@@ -124,10 +136,9 @@ class DoubleDeepQNetwork:
             sample_index = np.random.choice(self.memory_counter, size=self.batch_size)
         batch_memory = self.memory[sample_index, :]
 
-        q_next, q_eva_next, q_eval = self.sess.run(
-            [self.q_next, self.q_eval, self.q_eval],
+        q_next, q_eval = self.sess.run(
+            [self.q_next, self.q_eval],
             feed_dict={
-                self.s_: batch_memory[:, -self.n_features:],
                 self.s_: batch_memory[:, -self.n_features:],
                 self.s : batch_memory[:, :self.n_features]
             }
@@ -139,9 +150,7 @@ class DoubleDeepQNetwork:
         eval_act_index = batch_memory[:,self.n_features].astype(int)
         reward = batch_memory[:, self.n_features + 1]
 
-        max_act_next = np.argmax(q_eva_next, axis=1)
-        selected_act_next = q_next[batch_index, max_act_next]
-        q_target[batch_index, eval_act_index] = reward + self.gamma * selected_act_next
+        q_target[batch_index, eval_act_index] = reward + self.gamma * np.max(q_next, axis=1)
 
         _, self.cost = self.sess.run([self._train_op, self.loss],
                                     feed_dict={
