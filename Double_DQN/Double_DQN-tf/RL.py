@@ -124,7 +124,7 @@ class DoubleDeepQNetwork:
             sample_index = np.random.choice(self.memory_counter, size=self.batch_size)
         batch_memory = self.memory[sample_index, :]
 
-        q_next, q_eva_next, q_eval = self.sess.run(
+        q_next, q_eval_next, q_eval = self.sess.run(
             [self.q_next, self.q_eval, self.q_eval],
             feed_dict={
                 self.s_: batch_memory[:, -self.n_features:],
@@ -139,7 +139,7 @@ class DoubleDeepQNetwork:
         eval_act_index = batch_memory[:,self.n_features].astype(int)
         reward = batch_memory[:, self.n_features + 1]
 
-        max_act_next = np.argmax(q_eva_next, axis=1)
+        max_act_next = np.argmax(q_eval_next, axis=1)
         selected_act_next = q_next[batch_index, max_act_next]
         q_target[batch_index, eval_act_index] = reward + self.gamma * selected_act_next
 
