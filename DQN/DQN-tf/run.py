@@ -4,7 +4,7 @@ from RL import DeepQNetwork
 def run_maze():
     step = 0
     
-    for epidode in range(300):
+    for epidode in range(100):
         # Intial observation
         observation = env.reset()
 
