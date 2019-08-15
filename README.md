@@ -36,3 +36,4 @@ E(s,a) is eligibility trace.
 ## Actor-Critic
 - [discrete](https://github.com/YisraelZhang/Reinforcement-Learning/blob/master/AC/AC_CartPole.py)
 - [continue](https://github.com/YisraelZhang/Reinforcement-Learning/blob/master/AC/AC_continue_Pendulum.py)
+- [PPO](https://github.com/YisraelZhang/Reinforcement-Learning/tree/master/PPO)
