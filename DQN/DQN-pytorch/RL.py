@@ -72,7 +72,7 @@ class Agent():
 
         if np.random.uniform()<self.epsilon:
             action_value = self.policy_net.forward(observation)
-            action = torch.argmax(action_value)
+            action = torch.argmax(action_value).numpy()
         else:
             action = np.random.randint(0, self.n_actions)
         return action

@@ -123,7 +123,7 @@ class Critic(object):
         return td_error
 
 
-OUTPUT_GRAPH = False
+OUTPUT_GRAPH = True
 MAX_EPISODE = 1000
 MAX_EP_STEPS = 200
 DISPLAY_REWARD_THRESHOLD = -100  # renders environment if total episode reward is greater then this threshold

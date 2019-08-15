@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d5f35d1-8471-4e84-9702-6b9ca42254c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AC_CartPole.py" beforeDir="false" afterPath="$PROJECT_DIR$/AC_CartPole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DQN/DQN-pytorch/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DQN/DQN-pytorch/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A3C/.idea/A3C.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../policy_gradient/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AC_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/AC_tf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DQN/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DQN/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DQN/DQN-pytorch/RL.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DQN/DQN-pytorch/RL.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../policy_gradient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../policy_gradient/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +21,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AC_continue_Pendulum.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="722">
               <caret line="47" column="109" selection-start-line="47" selection-start-column="109" selection-end-line="47" selection-end-column="109" />
               <folding>
                 <element signature="e#54#72#0" expanded="true" />
@@ -30,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="323">
               <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
@@ -39,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AC_tf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
+            <state relative-caret-position="333">
+              <caret line="122" column="23" lean-forward="true" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
               <folding>
                 <element signature="e#413#436#0" expanded="true" />
               </folding>
@@ -65,16 +68,16 @@
       <list>
         <option value="$PROJECT_DIR$/AC_CartPole.py" />
         <option value="$PROJECT_DIR$/.vscode/AC_tf.py" />
-        <option value="$PROJECT_DIR$/AC_tf.py" />
         <option value="$PROJECT_DIR$/AC_continue_Pendulum.py" />
+        <option value="$PROJECT_DIR$/AC_tf.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="50" />
+    <option name="x" value="720" />
     <option name="y" value="23" />
-    <option name="width" value="1390" />
-    <option name="height" value="804" />
+    <option name="width" value="720" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -82,14 +85,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="AC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AC" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="AC" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
@@ -98,6 +96,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,21 +211,25 @@
       <workItem from="1565749501762" duration="6429000" />
       <workItem from="1565764149019" duration="216000" />
       <workItem from="1565764638615" duration="2990000" />
+      <workItem from="1565801505801" duration="358000" />
+      <workItem from="1565834622130" duration="324000" />
+      <workItem from="1565850430906" duration="60000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9635000" />
+    <option name="totallyTimeSpent" value="10377000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="804" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="806" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13233191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13662376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286517" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3277311" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988764" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -235,7 +238,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286517" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3277311" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -265,7 +268,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AC$AC_CartPole.coverage" NAME="AC_CartPole Coverage Results" MODIFIED="1565761271354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AC$AC_tf.coverage" NAME="AC_tf Coverage Results" MODIFIED="1565799617447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AC$AC_tf.coverage" NAME="AC_tf Coverage Results" MODIFIED="1565801516407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AC$AC_continue_Pendulum.coverage" NAME="AC_continue_Pendulum Coverage Results" MODIFIED="1565799585432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
@@ -331,16 +334,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AC_continue_Pendulum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="722">
           <caret line="47" column="109" selection-start-line="47" selection-start-column="109" selection-end-line="47" selection-end-column="109" />
           <folding>
             <element signature="e#54#72#0" expanded="true" />
@@ -348,10 +344,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AC_tf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
+        <state relative-caret-position="333">
+          <caret line="122" column="23" lean-forward="true" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
           <folding>
             <element signature="e#413#436#0" expanded="true" />
           </folding>
