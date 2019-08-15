@@ -32,3 +32,7 @@ E(s,a) is eligibility trace.
 - [Policy Gradient](https://github.com/YisraelZhang/Reinforcement-Learning/tree/master/policy_gradient)
 
 ![](http://latex.codecogs.com/gif.latex?%5Cnabla%20R_%5Ctheta%20%3D%20%5Cfrac%201%20N%20%5Csum_%7Bn%3D1%7D%5EN%20%5Csum_%7Bt%3D1%7D%5E%7BT_N%7D%20R%28%5Ctau%5En%29%5Cnabla%5Clog%20p_%5Ctheta%28a_t%5En%2C%20s_t%5En%29)
+
+## Actor-Critic
+- [discrete](https://github.com/YisraelZhang/Reinforcement-Learning/blob/master/AC/AC_CartPole.py)
+- [continue](https://github.com/YisraelZhang/Reinforcement-Learning/blob/master/AC/AC_continue_Pendulum.py)
