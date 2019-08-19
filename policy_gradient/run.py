@@ -22,12 +22,12 @@ RL = PolicyGradient(
     # output_graph=True,
 )
 
-for i_episode in range(3000):
+for i_episode in range(1500):
 
     observation = env.reset()
 
     while True:
-        if RENDER and i_episode>2900: env.render()
+        if RENDER and i_episode>1000: env.render()
 
         action = RL.choose_action(observation)
 

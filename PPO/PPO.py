@@ -7,6 +7,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.distributions.kl import kl_divergence
+from tensorboardX import SummaryWriter
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,7 +25,7 @@ C_UPDATE_STEPS = 10
 S_DIM, A_DIM = 3, 1
 METHOD = [
     dict(name='kl_pen', kl_target=0.01, lam=0.5),   # KL penalty
-    dict(name='clip', epsilon=0.2),                 # Clipped surrogate objective, find this is better
+    dict(name='clip', epsilon=0.1),                 # Clipped surrogate objective, find this is better
 ][1]                                                # choose the method for optimization
 
 def v_wrap(np_array, dtype=np.float32):
@@ -37,7 +38,11 @@ class PPO(object):
         self.critic = Critic(n_features=n_features)
         self.actor_new = Actor(n_features=n_features, n_actions=n_actions)
         self.actor_old = Actor(n_features=n_features, n_actions=n_actions)
+        weight_init(self.actor_new)
+        weight_init(self.critic)
         self.actor_old.load_state_dict(self.actor_new.state_dict())
+
+
 
     def choose_action(self, s):
         return self.actor_old.choose_action(s)
@@ -47,11 +52,10 @@ class PPO(object):
 
     def update(self, s, a, r, method, A_update_steps, C_update_steps, A_lr, C_lr):
         self.actor_old.load_state_dict(self.actor_new.state_dict())
-        advantage = self.critic.advantage(s, r)
+        advantage = self.critic.advantage(s, r).detach()
         # update actor
         if method['name'] == 'kl_pen':
             for _ in range(A_update_steps):
-                advantage = self.critic.advantage(s, r)
                 ratio = self.actor_new(s).prob(a)/self.actor_old(s).prob(a)
                 surr = ratio * advantage
 
@@ -76,7 +80,6 @@ class PPO(object):
         else:   # clipping method, find this is better (OpenAI's paper)
             for _ in range(A_update_steps):
                 # tensorflow ratio = pi.prob(self.tfa) / oldpi.prob(self.tfa)
-                advantage = self.critic.advantage(s, r)
                 ratio = torch.exp(self.actor_new(s).log_prob(a) - self.actor_old(s).log_prob(a))
                 surr = ratio * advantage
                 a_loss = torch.min(surr, torch.clamp(torch.tensor(1.-method['epsilon']), torch.tensor(1.0+method['epsilon']))*advantage).mean()

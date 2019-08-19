@@ -108,7 +108,7 @@ for i_episode in range(MAX_EPISODE):
     ep_rs = []
     while True:
         # if RENDER:
-        env.render()
+        # env.render()
         a = np.array([actor.choose_action(s).numpy()])
 
         s_, r, done, info = env.step(a)

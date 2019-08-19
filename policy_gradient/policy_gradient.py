@@ -41,7 +41,7 @@ class PolicyGradient():
         self.all_act_prob = F.softmax(self.model.forward(torch.from_numpy(np.vstack(self.ep_obs)).float()))
         # x = F.one_hot(torch.from_numpy(np.array(self.ep_as)).to(torch.int64), self.n_actions).float()
         neg_log_prob = torch.sum(-torch.log(self.all_act_prob) *
-                                 F.one_hot(torch.from_numpy(np.array(self.ep_as)).to(torch.int64), self.n_actions).float())
+                                 F.one_hot(torch.from_numpy(np.array(self.ep_as)).to(torch.int64), self.n_actions).float(), dim=1)
         loss = torch.mean(neg_log_prob* discounted_ep_rs_norm).float()
         optimizer = optim.Adam(self.model.parameters(),lr=self.lr)
 
