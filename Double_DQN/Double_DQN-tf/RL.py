@@ -17,6 +17,7 @@ class DoubleDeepQNetwork:
         memory_size=500,
         batch_size=32,
         e_greedy_increment=None,
+        sess=tf.Session(),
         out_graph=False,):
         # initial
         self.n_actions = n_actions
@@ -42,7 +43,7 @@ class DoubleDeepQNetwork:
         e_params = tf.get_collection('eval_net_params')
         self.replace_target_op = [tf.assign(t, e) for t, e in zip(t_params,e_params)]
         
-        self.sess = tf.Session()
+        self.sess = sess
 
         if out_graph:
             tf.summary.FileWriter('./logs', self.sess.graph)

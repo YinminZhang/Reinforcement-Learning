@@ -70,7 +70,7 @@ class Agent():
         observation = torch.from_numpy(observation[np.newaxis, :]).float()
 
         if np.random.uniform()<self.epsilon:
-            action_value = self.policy_net.forward(observation)
+            action_value = self.policy_net(observation)
             action = torch.argmax(action_value).numpy()
         else:
             action = np.random.randint(0, self.n_actions)
@@ -97,13 +97,17 @@ class Agent():
         q_eval = self.policy_net(batch_memory[:, :self.n_features])
         self.target_net.eval()
         q_next = self.target_net(batch_memory[:, -self.n_features:])
+        q_eval_next = self.policy_net(batch_memory[:, -self.n_features:]).detach()
 
         q_target = q_eval.clone()
         batch_index = torch.arange(self.batch_size, dtype=torch.long)
         eval_act_index = batch_memory[:, self.n_features].long()
         reward = batch_memory[:, self.n_features+1]
 
-        q_target[batch_index, eval_act_index] = reward + self.gamma * torch.max(q_next, dim=1)[0]
+        max_act_next = torch.argmax(q_eval_next, dim=1)
+        selected_act_next = q_next[batch_index, max_act_next]
+
+        q_target[batch_index, eval_act_index] = reward + self.gamma * selected_act_next
 
         cost = F.smooth_l1_loss(q_eval, q_target)
         optimizer = optim.RMSprop(self.policy_net.parameters())

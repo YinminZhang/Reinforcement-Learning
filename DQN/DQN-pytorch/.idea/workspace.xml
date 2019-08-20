@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cf2ea8-ceef-4bfa-b84f-0a6eae7c255f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DQN-tf/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DQN-tf/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RL.py" beforeDir="false" afterPath="$PROJECT_DIR$/RL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rum_cartpole.py" beforeDir="false" afterPath="$PROJECT_DIR$/rum_cartpole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DQN-tf/RL.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DQN-tf/RL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Double_DQN/Double_DQN-tf/RL.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Double_DQN/Double_DQN-tf/RL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PPO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Q_learning/Q_Learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/Q_learning/Q_Learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Q_learning/maze.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/Q_learning/maze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Q_learning/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/Q_learning/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sarsa/maze.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/sarsa/maze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sarsa/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/sarsa/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sarsa/sarsa.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/sarsa/sarsa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sarsa_lambda/maze.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/sarsa_lambda/maze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sarsa_lambda/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/sarsa_lambda/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sarsa_lambda/sarsa_lambda.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Q_value/sarsa_lambda/sarsa_lambda.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,18 +24,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/RL.py" />
-      </list>
-    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -39,16 +43,8 @@
     <option name="width" value="1414" />
     <option name="height" value="806" />
   </component>
+  <component name="ProjectId" id="1PfmQUcTuSfXT2znR8QPIBiHf5h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -69,6 +65,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="rum_cartpole" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DQN-pytorch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rum_cartpole.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.rum_cartpole" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -81,58 +106,25 @@
       <updated>1565690129489</updated>
       <workItem from="1565690132269" duration="419000" />
       <workItem from="1565697125818" duration="156000" />
+      <workItem from="1566273509461" duration="307000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="575000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="804" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file:///anaconda3/envs/pytorch/lib/python3.6/site-packages/gym/envs/classic_control/cartpole.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DQN_pytorch$rum_cartpole.coverage" NAME="rum_cartpole Coverage Results" MODIFIED="1566273543016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -9,12 +9,14 @@ class DQN(nn.Module):
     def __init__(self, n_features, n_actions):
         super(DQN, self).__init__()
         self.linear1 = nn.Linear(n_features, 10, bias=True)
-        self.linear2 = nn.Linear(10, n_actions, bias=True)
+        self.adv = nn.Linear(10, n_actions, bias=True)
+        self.value = nn.Linear(10, 1, bias=True)
 
     def forward(self, x):
         x = F.relu(self.linear1(x))
-        x = self.linear2(x)
-        return x
+        A = self.adv(x)
+        V = self.value(x)
+        return V + (A-torch.mean(A, dim=1, keepdim=True))
 
 class Agent():
     def __init__(
@@ -70,7 +72,7 @@ class Agent():
         observation = torch.from_numpy(observation[np.newaxis, :]).float()
 
         if np.random.uniform()<self.epsilon:
-            action_value = self.policy_net.forward(observation)
+            action_value = self.policy_net(observation)
             action = torch.argmax(action_value).numpy()
         else:
             action = np.random.randint(0, self.n_actions)
@@ -96,14 +98,14 @@ class Agent():
         batch_memory = torch.from_numpy(self.memory[sample_index, :]).float()
         q_eval = self.policy_net(batch_memory[:, :self.n_features])
         self.target_net.eval()
-        q_next = self.target_net(batch_memory[:, -self.n_features:])
+        q_next = self.target_net(batch_memory[:, -self.n_features:]).detach()
 
         q_target = q_eval.clone()
         batch_index = torch.arange(self.batch_size, dtype=torch.long)
         eval_act_index = batch_memory[:, self.n_features].long()
         reward = batch_memory[:, self.n_features+1]
 
-        q_target[batch_index, eval_act_index] = reward + self.gamma * torch.max(q_next, dim=1)[0]
+        q_target[batch_index, eval_act_index] = reward + self.gamma * q_next.max(dim=1)[0]
 
         cost = F.smooth_l1_loss(q_eval, q_target)
         optimizer = optim.RMSprop(self.policy_net.parameters())

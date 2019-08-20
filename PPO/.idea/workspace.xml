@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fbcc7f-07da-4b04-ac4b-bdd5945da040" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../AC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC/AC_continue_Pendulum.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC/AC_continue_Pendulum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC/AC_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC/AC_tf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPO.py" beforeDir="false" afterPath="$PROJECT_DIR$/PPO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../policy_gradient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../policy_gradient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../policy_gradient/policy_gradient.py" beforeDir="false" afterPath="$PROJECT_DIR$/../policy_gradient/policy_gradient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../policy_gradient/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../policy_gradient/run.py" afterDir="false" />
-    </list>
+    <list default="true" id="70fbcc7f-07da-4b04-ac4b-bdd5945da040" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +101,7 @@
       <workItem from="1565949499637" duration="141000" />
       <workItem from="1566032559330" duration="22000" />
       <workItem from="1566184176281" duration="2070000" />
+      <workItem from="1566202045736" duration="6000" />
     </task>
     <servers />
   </component>

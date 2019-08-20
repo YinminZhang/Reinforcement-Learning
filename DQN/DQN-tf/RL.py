@@ -67,7 +67,7 @@ class DeepQNetwork:
                 self.q_eval = tf.matmul(l1, w2) + b2
 
         with tf.variable_scope('loss'):
-          self.loss = tf.reduce_mean(tf.squared_difference(self.q_target, self.q_eval))  
+          self.loss = tf.reduce_mean(tf.squared_difference(self.q_target, self.q_eval))
 
         with tf.variable_scope('train'):
             self._train_op = tf.train.RMSPropOptimizer(self.lr).minimize(self.loss)
@@ -82,7 +82,7 @@ class DeepQNetwork:
                 l1 = tf.nn.relu(tf.matmul(self.s, w1) + b1)
             with tf.variable_scope('l2'):
                 w2 = tf.get_variable('w2', [n_l1, self.n_actions], initializer=w_initializer, collections=c_names)
-                b1 = tf.get_variable('b1', [1, self.n_actions], initializer=b_initializer, collections=c_names)
+                b2 = tf.get_variable('b1', [1, self.n_actions], initializer=b_initializer, collections=c_names)
                 self.q_next = tf.matmul(l1, w2) + b2
 
     def store_transition(self, s, a, r, s_):
