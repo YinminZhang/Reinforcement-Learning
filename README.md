@@ -37,3 +37,6 @@ E(s,a) is eligibility trace.
 - [discrete](https://github.com/YisraelZhang/Reinforcement-Learning/blob/master/AC/AC_CartPole.py)
 - [continue](https://github.com/YisraelZhang/Reinforcement-Learning/blob/master/AC/AC_continue_Pendulum.py)
 - [PPO](https://github.com/YisraelZhang/Reinforcement-Learning/tree/master/PPO)
+
+# Acknowledge
+[Morvan Zhou's Reinforcement-learning-with-tensorflow](https://github.com/MorvanZhou/Reinforcement-learning-with-tensorflow)
